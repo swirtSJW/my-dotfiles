@@ -10,6 +10,12 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Include custom bash scripts
+BASH_INC=~/.homesick/repos/dotfiles/bash_inc
+for incl in $BASH_INC/*
+  do . $incl
+done
+
 # set PATH so it includes composers global bin directory
 if [ -d "$HOME/.composer/vendor/bin" ] ; then
     export PATH="$HOME/.composer/vendor/bin:$PATH"
