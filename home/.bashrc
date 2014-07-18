@@ -6,6 +6,9 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific aliases and functions
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
 # set PATH so it includes composers global bin directory
 if [ -d "$HOME/.composer/vendor/bin" ] ; then
