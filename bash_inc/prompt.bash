@@ -2,6 +2,19 @@
 
 function prompt() {
 
+  case $TERM in
+    "dumb")
+      PS1="> "
+      return
+      ;;
+    xterm*)
+      TITLEBAR='\[\033]0;[\u@\h] \w\007\]'
+      ;;
+    *)
+      TITLEBAR=''
+      ;;
+  esac
+
   local time="$grey`date +%T`"
   local git_branch="$(git_short_sha)$(scm_prompt_info)"
   if [[ $git_branch ]]
@@ -13,7 +26,7 @@ function prompt() {
 
   local prompt_char='» '
 
-  PS1="$(scm_char) $reset_color[$blue\u$reset_color@$green\H$reset_color] $yellow\w${reset_color}$git_prompt\n$time$red $prompt_char$reset_color"
+  PS1="$reset_color[$blue\u$reset_color@$green\H$reset_color] $yellow\w${reset_color}$git_prompt\n$time$red $prompt_char$reset_color"
   PS2='> '
   PS4='+ '
 }
