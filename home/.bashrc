@@ -44,5 +44,13 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+## Auto complete git.
+if [ -f ~/.homesick/repos/dotfiles/home/.git-completion.bash ]; then
+  . ~/.homesick/repos/dotfiles/home/.git-completion.bash
+fi
+
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/workspace/gowork
 
