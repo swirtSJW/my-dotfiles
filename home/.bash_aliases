@@ -16,6 +16,9 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias ws="cd $HOME/workspace"
 alias ca="cd $HOME/Documents/civicActions/projects"
+alias ca-ed="cd $HOME/Documents/civicActions/projects/ED/sites"
+
+alias clean-kernals="sudo apt-get remove --purge $(dpkg -l 'linux-*' | sed '/^ii/!d;/'\"$(uname -r | sed \"s/\(.*\)-\([^0-9]\+\)/\1/\")\"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d')"
 
 #drush
 alias showModules='drush pm-list --type=Module --no core --status=enabled'
@@ -66,8 +69,8 @@ alias cnx-castle="cd $HOME/Documents/civicActions/projects/Castle/CNX; sudo open
 alias perms='stat -c '\''%A %a %n'\'' *'
 
 # Connection to LINCS
-alias cnx-lincs-storage="ssh steve_wirt@54.82.195.151;"
-alias mnt-lincs-secure='sshfs steve_wirt@54.82.195.151:/var/docs/ ~/lincs-secure -C -o allow_other,nonempty,transform_symlinks'
+alias cnx-lincs-storage="ssh 54.82.195.151;"
+alias mnt-lincs-secure='sshfs swirt@54.82.195.151:/var/docs/ ~/lincs-secure -C -o allow_other,nonempty,transform_symlinks'
 alias dmnt-lincs-secure='fusermount -z -u /home/swirt/lincs-secure'
 
 # Connection to NAS
