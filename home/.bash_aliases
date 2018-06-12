@@ -16,10 +16,12 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias ws="cd $HOME/workspace"
 alias ca="cd $HOME/Documents/civicActions/projects"
-alias ca-ed="cd $HOME/Documents/civicActions/projects/ED/sites"
+alias ca-ed="cd $HOME/workspace/ED"
 
+#cleanup
 alias remove-kernals="sudo apt-get remove --purge $(dpkg -l 'linux-*' | sed '/^ii/!d;/'\"$(uname -r | sed \"s/\(.*\)-\([^0-9]\+\)/\1/\")\"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d')"
-alias remove-db-snapshots="find . -name \"*.sql.gz\" -type f -delete"
+alias remove-db-snapshots="cd ~/workspace; find . -name \"*.sql.gz\" -type f -delete; cd -"
+alias remove-web-logs="cd ~/workspace; find . -type f -name '*.log' -exec rm {} +; cd -"
 
 #drush
 alias showModules='drush pm-list --type=Module --no core --status=enabled'
