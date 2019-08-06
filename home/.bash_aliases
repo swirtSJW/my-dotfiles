@@ -17,6 +17,8 @@ alias ....="cd ../../.."
 alias ws="cd $HOME/workspace"
 alias ca="cd $HOME/Documents/civicActions/projects"
 alias ca-ed="cd $HOME/workspace/ED"
+alias ca-va="cd $HOME/workspace/ED""
+alias docs="cd /media/swirt/ExtraDrive/Documents/"
 
 #cleanup
 alias remove-kernals="sudo apt-get remove --purge $(dpkg -l 'linux-*' | sed '/^ii/!d;/'\"$(uname -r | sed \"s/\(.*\)-\([^0-9]\+\)/\1/\")\"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d')"
@@ -42,6 +44,8 @@ alias gbase-integration='git checkout integration && git pull && git checkout - 
 alias gbase-7x='git checkout 7.x-1.x && git pull && git checkout - && git rebase 7.x-1.x'
 
 # odd stuff
+alias noblue="redshift -O 3700"
+alias blue="redshift -O 5500"
 alias tick="sudo hdparm -B 40 /dev/sdb"
 alias go-rvm="source /home/swirt/.rvm/scripts/rvm"
 alias run-selenium="export DISPLAY=:0; sudo java -jar /usr/lib/selenium/selenium-server-standalone-2.45.0.jar"
@@ -50,21 +54,26 @@ alias tail-error="tail /var/log/apache2/error.log -f"
 
 
 # Connections
-alias cnx-collegehouse.prod="ssh -l u43293413 collegehousebb.com"
+alias cnx-ca-vpn="sudo openvpn --config ~/.ssh/ca-client.ovpn"
+alias cnx-va-socks-int="ssh socks-va -D 2001 -N &"
+alias cnx-va-socks="ssh socks -D 2001 -N &"
+
+alias cnx-collegehouse.prod="ssh -4 -l u43293413 collegehousebb.com"
 alias cnx-collegehouse.local="cd ~/websites/clients/CollegeHouse_BB/web/web/"
 alias cnx-collegehouse.access="cat ~/websites/clients/CollegeHouse_BB/access.txt"
 
-alias cnx-gillumhouse.prod="ssh -l u52578791 home278053336.1and1-data.host"
+alias cnx-gillumhouse.prod="ssh -4 -l u52578791 home278053336.1and1-data.host"
 alias cnx-gillumhouse.local="cd ~/websites/clients/Gillum House/web/new-site/"
 alias cnx-gillumhouse.access="cat ~/websites/clients/Gillum House/access.txt"
 
-alias cnx-princealbert.prod="ssh -l u48017134 princealbertguesthouse.com"
+alias cnx-princealbertNew.prod="ssh -4 -l u93984847 home742317639.1and1-data.host"
+alias cnx-princealbert.prod="ssh -4 -l u48017134 princealbertguesthouse.com"
 alias cnx-princealbert.local="cd ~/websites/clients/PrinceAlbertGuesthouse/web/dev.princealbertnet"
 alias cnx-princealbert.access="cat ~/websites/clients/PrinceAlbertGuesthouse/access.txt"
 
-alias cnx-1and1.prod="ssh -l u41180863 sciencejoywagon.com"
+alias cnx-1and1.prod="ssh -4 -l u41180863 sciencejoywagon.com"
 alias cnx-1and1.local="cd ~/websites/1and1master/"
-alias cnx-1and1.git="ssh -l u41180863 git.sciencejoywagon.com"
+alias cnx-1and1.git="ssh -4 -l u41180863 git.sciencejoywagon.com"
 
 # connection to Castle
 alias cnx-castle="cd $HOME/Documents/civicActions/projects/Castle/CNX; sudo openvpn client.conf"
