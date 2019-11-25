@@ -53,4 +53,7 @@ source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/workspace/gowork
+export XDEBUG_CONFIG="idekey=VSCODE"
 
+export NVM_DIR="/home/swirt/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
