@@ -17,11 +17,11 @@ alias ....="cd ../../.."
 alias ws="cd $HOME/workspace"
 alias ca="cd $HOME/Documents/civicActions/projects"
 alias ca-ed="cd $HOME/workspace/ED"
-alias ca-va="cd $HOME/workspace/ED""
-alias docs="cd /media/swirt/ExtraDrive/Documents/"
+alias ca-va="cd $HOME/workspace/va"
+alias docs="cd /media/swirt/ExtraDrive/Documents"
 
 #cleanup
-alias remove-kernals="sudo apt-get remove --purge $(dpkg -l 'linux-*' | sed '/^ii/!d;/'\"$(uname -r | sed \"s/\(.*\)-\([^0-9]\+\)/\1/\")\"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d')"
+#alias remove-kernals="sudo apt-get remove --purge $(dpkg -l 'linux-*' | sed '/^ii/!d;/'\"$(uname -r | sed \"s/\(.*\)-\([^0-9]\+\)/\1/\")\"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d')"
 alias remove-db-snapshots="cd ~/workspace; find . -name \"*.sql.gz\" -type f -delete; cd -"
 alias remove-web-logs="cd ~/workspace; find . -type f -name '*.log' -exec rm {} +; cd -"
 
@@ -54,16 +54,16 @@ alias tail-error="tail /var/log/apache2/error.log -f"
 
 
 # Connections
-alias cnx-ca-vpn="sudo openvpn --config ~/.ssh/ca-client.ovpn"
-alias cnx-va-socks-int="ssh socks-va -D 2001 -N &"
-alias cnx-va-socks="ssh socks -D 2001 -N &"
+alias cnx-ca-vpn='sudo openvpn --config ~/.ssh/ca-client.ovpn'
+alias cnx-va-socks-int='ssh socks-va -D 2001 -N &'
+alias cnx-va-socks='ssh socks -D 2001 -N &'
 
 alias cnx-collegehouse.prod="ssh -4 -l u43293413 collegehousebb.com"
-alias cnx-collegehouse.local="cd ~/websites/clients/CollegeHouse_BB/web/web/"
+alias cnx-collegehouse.local="cd ~/websites/clients/CollegeHouse_BB/web/web"
 alias cnx-collegehouse.access="cat ~/websites/clients/CollegeHouse_BB/access.txt"
 
 alias cnx-gillumhouse.prod="ssh -4 -l u52578791 home278053336.1and1-data.host"
-alias cnx-gillumhouse.local="cd ~/websites/clients/Gillum House/web/new-site/"
+alias cnx-gillumhouse.local="cd ~/websites/clients/Gillum House/web/new-site"
 alias cnx-gillumhouse.access="cat ~/websites/clients/Gillum House/access.txt"
 
 alias cnx-princealbertNew.prod="ssh -4 -l u93984847 home742317639.1and1-data.host"
