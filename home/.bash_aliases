@@ -20,6 +20,9 @@ alias ca-ed="cd $HOME/workspace/ED"
 alias ca-va="cd $HOME/workspace/va"
 alias docs="cd /media/swirt/ExtraDrive/Documents"
 
+#DOJO
+alias copy-migration-tools="rm -rf /home/swirt/workspace/doj/ojp/docroot/modules/contrib/migration_tools; cp /home/swirt/workspace/migration_tools8/  /home/swirt/workspace/doj/ojp/docroot/modules/contrib/migration_tools/ -R;"
+
 #cleanup
 #alias remove-kernals="sudo apt-get remove --purge $(dpkg -l 'linux-*' | sed '/^ii/!d;/'\"$(uname -r | sed \"s/\(.*\)-\([^0-9]\+\)/\1/\")\"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d')"
 alias remove-db-snapshots="cd ~/workspace; find . -name \"*.sql.gz\" -type f -delete; cd -"
