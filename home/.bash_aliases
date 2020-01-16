@@ -23,6 +23,10 @@ alias docs="cd /media/swirt/ExtraDrive/Documents"
 #DOJO
 alias copy-migration-tools="rm -rf /home/swirt/workspace/doj/ojp/docroot/modules/contrib/migration_tools; cp /home/swirt/workspace/migration_tools8/  /home/swirt/workspace/doj/ojp/docroot/modules/contrib/migration_tools/ -R;"
 
+#VA
+alias copy-govdelivery-bulletins="rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/govdelivery_bulletins; cp /home/swirt/workspace/mods/govdelivery_bulletins/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/govdelivery_bulletins/ -R;"
+
+
 #cleanup
 #alias remove-kernals="sudo apt-get remove --purge $(dpkg -l 'linux-*' | sed '/^ii/!d;/'\"$(uname -r | sed \"s/\(.*\)-\([^0-9]\+\)/\1/\")\"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d')"
 alias remove-db-snapshots="cd ~/workspace; find . -name \"*.sql.gz\" -type f -delete; cd -"
