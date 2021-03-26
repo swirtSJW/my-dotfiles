@@ -20,13 +20,15 @@ alias ca-ed="cd $HOME/workspace/ED"
 alias ca-va="cd $HOME/workspace/va"
 alias docs="cd /media/swirt/ExtraDrive/Documents"
 
-#DOJO
-alias copy-migration-tools="rm -rf /home/swirt/workspace/doj/ojp/docroot/modules/contrib/migration_tools; cp /home/swirt/workspace/migration_tools8/  /home/swirt/workspace/doj/ojp/docroot/modules/contrib/migration_tools/ -R;"
 
 #VA
-alias copy-govdelivery-bulletins="rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/govdelivery_bulletins; cp /home/swirt/workspace/mods/govdelivery_bulletins/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/govdelivery_bulletins/ -R;"
+alias copy-govdelivery-bulletins-git="rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/govdelivery_bulletins/.git; cp /home/swirt/workspace/mods/govdelivery_bulletins/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/govdelivery_bulletins/.git/ -R;"
 
-
+alias copy-node_link_report-git="cd /home/swirt/workspace/mods/node_link_report; git fetch --all; cd -; rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/node_link_report/.git; cp /home/swirt/workspace/mods/node_link_report/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/node_link_report/.git/ -R;"
+alias copy-entity_field_fetch-git="cd /home/swirt/workspace/mods/entity_field_fetch; git fetch --all; cd -; rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/entity_field_fetch/.git; cp /home/swirt/workspace/mods/entity_field_fetch/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/entity_field_fetch/.git/ -R;"
+alias copy-migration_tools-git="cd /home/swirt/workspace/mods/migration_tools; git fetch --all; cd -; rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/migration_tools/.git; cp /home/swirt/workspace/mods/migration_tools/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/entity_field_fetch/.git/ -R;"
+alias copy-site_alert="rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/site_alert; cp /home/swirt/workspace/mods/site_alert/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/site_alert/ -R;"
+alias copy-migrate_plus="rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/migrate_plus; cp /home/swirt/workspace/mods/migrate_plus/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/migrate_plus/ -R;"
 #cleanup
 #alias remove-kernals="sudo apt-get remove --purge $(dpkg -l 'linux-*' | sed '/^ii/!d;/'\"$(uname -r | sed \"s/\(.*\)-\([^0-9]\+\)/\1/\")\"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d')"
 alias remove-db-snapshots="cd ~/workspace; find . -name \"*.sql.gz\" -type f -delete; cd -"
@@ -102,6 +104,9 @@ alias mnt-dojo-wifi='sshfs -o nonempty,transform_symlinks,identityfile=/home/nic
 alias cnx-dojo="ssh nick@192.168.1.15;"
 alias mnt-dojo='sshfs -o nonempty,transform_symlinks,identityfile=/home/nick/.ssh/id_rsa -o idmap=user nick@192.168.1.15:/home/nick ~/Secure_Cloud'
 alias dmnt-dojo='fusermount -z -u /home/swirt/Secure_Cloud'
+
+# Update VS Code
+alias update-vscode="wget https://vscode-update.azurewebsites.net/latest/linux-deb-x64/stable -O /tmp/code_latest_amd64.deb && sudo dpkg -i /tmp/code_latest_amd64.deb;"
 
 # File syncs
 alias sync-web-dev.wirt.us="rsync -chavzP --stats u41180863@s176840467.onlinehome.us:/kunden/homepages/31/d176840445/htdocs/d7-24/sites/web-dev.wirt.us/files /home/swirt/workspace/d7-24/sites/web-dev.wirt.us/"

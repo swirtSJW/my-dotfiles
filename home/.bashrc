@@ -82,3 +82,4 @@ function blt() {
 }
 
 export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="$PATH:/opt/mssql-tools/bin"
