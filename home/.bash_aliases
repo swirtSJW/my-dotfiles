@@ -23,10 +23,10 @@ alias docs="cd /media/swirt/ExtraDrive/Documents"
 
 #VA
 alias copy-govdelivery-bulletins-git="rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/govdelivery_bulletins/.git; cp /home/swirt/workspace/mods/govdelivery_bulletins/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/govdelivery_bulletins/.git/ -R;"
-
-alias copy-node_link_report-git="cd /home/swirt/workspace/mods/node_link_report; git fetch --all; cd -; rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/node_link_report/.git; cp /home/swirt/workspace/mods/node_link_report/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/node_link_report/.git/ -R;"
-alias copy-entity_field_fetch-git="cd /home/swirt/workspace/mods/entity_field_fetch; git fetch --all; cd -; rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/entity_field_fetch/.git; cp /home/swirt/workspace/mods/entity_field_fetch/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/entity_field_fetch/.git/ -R;"
-alias copy-migration_tools-git="cd /home/swirt/workspace/mods/migration_tools; git fetch --all; cd -; rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/migration_tools/.git; cp /home/swirt/workspace/mods/migration_tools/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/entity_field_fetch/.git/ -R;"
+alias copy-allow_only_one-git="cd /home/swirt/workspace/mods/allow_only_one; git fetch --all; git pull; cd -; rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/allow_only_one/.git; cp /home/swirt/workspace/mods/allow_only_one/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/allow_only_one/.git/ -R;"
+alias copy-node_link_report-git="cd /home/swirt/workspace/mods/node_link_report; git fetch --all; git pull; cd -; rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/node_link_report/.git; cp /home/swirt/workspace/mods/node_link_report/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/node_link_report/.git/ -R;"
+alias copy-entity_field_fetch-git="cd /home/swirt/workspace/mods/entity_field_fetch; git fetch --all; git pull; cd -; rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/entity_field_fetch/.git; cp /home/swirt/workspace/mods/entity_field_fetch/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/entity_field_fetch/.git/ -R;"
+alias copy-migration_tools-git="cd /home/swirt/workspace/mods/migration_tools; git fetch --all; git pull; cd -; rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/migration_tools/.git; cp /home/swirt/workspace/mods/migration_tools/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/migration_tools/.git/ -R;"
 alias copy-site_alert="rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/site_alert; cp /home/swirt/workspace/mods/site_alert/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/site_alert/ -R;"
 alias copy-migrate_plus="rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/migrate_plus; cp /home/swirt/workspace/mods/migrate_plus/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/migrate_plus/ -R;"
 #cleanup
@@ -49,6 +49,7 @@ alias gfixup="git commit --amend -C HEAD"
 alias glog="git log --decorate --oneline --graph"
 alias gremoveMerged='git branch --merged | grep -v "\*" | grep -v master | grep -v production | grep -v integration | xargs -n 1 git branch -d'
 alias gbase-master='git checkout master && git pull && git checkout - && git rebase master'
+alias gbase-main='git checkout main && git pull && git checkout - && git rebase main'
 alias gbase-integration='git checkout integration && git pull && git checkout - && git rebase integration'
 alias gbase-7x='git checkout 7.x-1.x && git pull && git checkout - && git rebase 7.x-1.x'
 
@@ -71,15 +72,6 @@ alias cnx-collegehouse.prod="ssh -4 -l u43293413 collegehousebb.com"
 alias cnx-collegehouse.local="cd ~/websites/clients/CollegeHouse_BB/web/web"
 alias cnx-collegehouse.access="cat ~/websites/clients/CollegeHouse_BB/access.txt"
 
-alias cnx-gillumhouse.prod="ssh -4 -l u52578791 home278053336.1and1-data.host"
-alias cnx-gillumhouse.local="cd ~/websites/clients/Gillum House/web/new-site"
-alias cnx-gillumhouse.access="cat ~/websites/clients/Gillum House/access.txt"
-
-alias cnx-princealbertNew.prod="ssh -4 -l u93984847 home742317639.1and1-data.host"
-alias cnx-princealbert.prod="ssh -4 -l u48017134 princealbertguesthouse.com"
-alias cnx-princealbert.local="cd ~/websites/clients/PrinceAlbertGuesthouse/web/dev.princealbertnet"
-alias cnx-princealbert.access="cat ~/websites/clients/PrinceAlbertGuesthouse/access.txt"
-
 alias cnx-1and1.prod="ssh -4 -l u41180863 sciencejoywagon.com"
 alias cnx-1and1.local="cd ~/websites/1and1master/"
 alias cnx-1and1.git="ssh -4 -l u41180863 git.sciencejoywagon.com"
@@ -88,11 +80,6 @@ alias cnx-1and1.git="ssh -4 -l u41180863 git.sciencejoywagon.com"
 alias cnx-castle="cd $HOME/Documents/civicActions/projects/Castle/CNX; sudo openvpn client.conf"
 # makes ls -la like display but includes numerical perms
 alias perms='stat -c '\''%A %a %n'\'' *'
-
-# Connection to LINCS
-alias cnx-lincs-storage="ssh 54.82.195.151;"
-alias mnt-lincs-secure='sshfs swirt@54.82.195.151:/var/docs/ ~/lincs-secure -C -o allow_other,nonempty,transform_symlinks'
-alias dmnt-lincs-secure='fusermount -z -u /home/swirt/lincs-secure'
 
 # Connection to NAS
 alias mnt-nas='sshfs -o nonempty,transform_symlinks -o idmap=none 192.168.1.3:/Public ~/NAS'
