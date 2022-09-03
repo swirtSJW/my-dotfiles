@@ -66,7 +66,7 @@ alias tail-error="tail /var/log/apache2/error.log -f"
 # Connections
 alias cnx-ca-vpn='sudo openvpn --config ~/.ssh/ca-client.ovpn'
 alias cnx-va-socks-int='ssh socks-va -D 2001 -N &'
-alias cnx-va-socks='ssh socks -D 2001 -N &'
+alias cnx-va-socks='killall ssh; ssh socks -D 2001 -N &'
 
 alias cnx-collegehouse.prod="ssh -4 -l u43293413 collegehousebb.com"
 alias cnx-collegehouse.local="cd ~/websites/clients/CollegeHouse_BB/web/web"
@@ -82,7 +82,7 @@ alias cnx-castle="cd $HOME/Documents/civicActions/projects/Castle/CNX; sudo open
 alias perms='stat -c '\''%A %a %n'\'' *'
 
 # Connection to NAS
-alias mnt-nas='sshfs -o nonempty,transform_symlinks -o idmap=none 192.168.1.3:/Public ~/NAS'
+alias mnt-nas='sshfs -o nonempty,transform_symlinks -o idmap=none 192.168.1.10:/Public ~/NAS'
 alias dmnt-nas='fusermount -z -u /home/swirt/NAS'
 
 # Connection to SECURE
