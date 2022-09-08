@@ -11,9 +11,10 @@ dotfiles is a repository that works with the homeshick setup. The prompt is base
 Quick install:
 
 ```
-git clone git://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
+git clone https://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
 source $HOME/.homesick/repos/homeshick/homeshick.sh
-homeshick clone https://git.civicactions.net/civicactions/dotfiles.git
+homeshick clone https://github.com/swirtSJW/my-dotfiles 
+## move my-dotfiles to dotfiles
 
 ```
 
@@ -26,6 +27,12 @@ mv $HOME/.bash_aliases $HOME/.bash_aliases__old
 ln -s $HOME/.homesick/repos/dotfiles/home/.bash_aliases $HOME/.bash_aliases
 
 mv $HOME/.bashrc $HOME/.bashrc_old
-ln -s $HOME/.homesick/repos/dotfiles/home/.bash_rc $HOME/.bash_rc
+ln -s $HOME/.homesick/repos/dotfiles/home/.bashrc $HOME/.bashrc
+
+mv $HOME/.git-completion.bash $HOME/.git-completion.bash__old
+ln -s $HOME/.homesick/repos/dotfiles/home/.git-completion.bash $HOME/.git-completion.bash
+
+
+
 
 ```
