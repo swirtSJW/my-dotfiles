@@ -36,3 +36,18 @@ ln -s $HOME/.homesick/repos/dotfiles/home/.git-completion.bash $HOME/.git-comple
 
 
 ```
+Since I am often setting this up while moving machines.  Here are some moving things I do too.
+INstall ssh on the source machine
+```
+sudp apt install openssh-server```
+
+```
+Then run these ont he destination machine.  adjust ip accordingly.
+```
+rsync -a --progress swirt@192.168.1.2:.ssh/ ~/.ssh
+
+rsync -a --progress swirt@192.168.1.2:Documents/ ~/Documents
+rsync -a --progress swirt@192.168.1.2:workspace/ ~/workspace
+
+
+```
