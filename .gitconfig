@@ -1,0 +1,44 @@
+[user]
+	name = Steve Wirt\n\n
+	email = swirtMiles@138230.no-reply.drupal.org
+[push]
+	default = simple
+[core]
+	editor = nano
+	autocrlf = false
+  safecrlf = false
+  ignorecase = false
+  excludesfile = ~/.gitignore
+	fileMode = false
+	eol = lf
+  
+[branch]
+	autosetuprebase = always
+  
+[color]
+  ui = true
+  
+[diff]
+  renames = copies
+  tool = vscode
+	colorMoved = zebra
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[alias]
+  a = apply --index
+  p = format-patch --stdout
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  glog = log --decorate --oneline --graph
+  gfixup = commit --amend -C HEAD
+[rerere]
+	enabled = true
+[merge]
+        tool = vscode
+	ff = only
+[mergetool "vscode"]
+   cmd = code --wait $MERGED
+
+[branch "master"]
+	rebase = true
+[branch "main"]
+	rebase = true
