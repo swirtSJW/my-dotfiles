@@ -1,9 +1,8 @@
-export PATH="$HOME/.composer/vendor/bin:$PATH"
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # misc
 alias grep='grep --color=auto'
+alias keyz='keychain --nogui --attempts 4 --eval id_rsa'
+
 
 # dir listing
 alias l='ls -alh'
@@ -101,6 +100,3 @@ alias sync-web-dev.wirt.us="rsync -chavzP --stats u41180863@s176840467.onlinehom
 # php coding standards
 alias drupalcs='phpcs --standard=$path_to_coder_module/coder_sniffer/Drupal --'
 
-# ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
-eval `keychain --eval id_rsa`

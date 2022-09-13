@@ -26,7 +26,7 @@ if [ -d "$HOME/bin" ] ; then
     export PATH="$HOME/bin:$PATH"
 fi
 
-export EDITOR=vi
+export EDITOR=nano
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -81,5 +81,14 @@ function blt() {
   fi
 }
 
-export PATH="$HOME/.composer/vendor/bin:$PATH"
+if [ -d "$HOME/.composer/vendor/bin" ] ; then
+    export PATH="$HOME/.composer/vendor/bin:$PATH"
+fi
 export PATH="$PATH:/opt/mssql-tools/bin"
+
+export PATH="$HOME/bin:/usr/local/bin:$PATH"
+
+# ssh
+export SSH_KEY_PATH="~/.ssh/rsa_id"
+# Use alias keyme to activate
+#  eval `keychain --nogui --attempts 4 --eval id_rsa`
