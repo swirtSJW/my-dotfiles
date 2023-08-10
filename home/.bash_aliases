@@ -23,11 +23,14 @@ alias docs="cd /media/swirt/ExtraDrive/Documents"
 #VA
 alias copy-govdelivery-bulletins-git="rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/govdelivery_bulletins/.git; cp /home/swirt/workspace/mods/govdelivery_bulletins/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/govdelivery_bulletins/.git/ -R;"
 alias copy-allow_only_one-git="cd /home/swirt/workspace/mods/allow_only_one; git fetch --all; git pull; cd -; rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/allow_only_one/.git; cp /home/swirt/workspace/mods/allow_only_one/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/allow_only_one/.git/ -R;"
+alias copy-content_model_documentation-git="cd /home/swirt/workspace/mods/content_model_documentation; git fetch --all; git pull; cd -; rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/content_model_documentation/.git; cp /home/swirt/workspace/mods/content_model_documentation/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/content_model_documentation/.git/ -R;"
 alias copy-node_link_report-git="cd /home/swirt/workspace/mods/node_link_report; git fetch --all; git pull; cd -; rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/node_link_report/.git; cp /home/swirt/workspace/mods/node_link_report/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/node_link_report/.git/ -R;"
 alias copy-entity_field_fetch-git="cd /home/swirt/workspace/mods/entity_field_fetch; git fetch --all; git pull; cd -; rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/entity_field_fetch/.git; cp /home/swirt/workspace/mods/entity_field_fetch/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/entity_field_fetch/.git/ -R;"
 alias copy-migration_tools-git="cd /home/swirt/workspace/mods/migration_tools; git fetch --all; git pull; cd -; rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/migration_tools/.git; cp /home/swirt/workspace/mods/migration_tools/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/migration_tools/.git/ -R;"
 alias copy-site_alert="rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/site_alert; cp /home/swirt/workspace/mods/site_alert/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/site_alert/ -R;"
 alias copy-migrate_plus="rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/migrate_plus; cp /home/swirt/workspace/mods/migrate_plus/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/migrate_plus/ -R;"
+alias copy-post_api-git="cd /home/swirt/workspace/mods/post_api; git fetch --all; git pull; cd -; rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/post_api/.git; cp /home/swirt/workspace/mods/post_api/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/post_api/.git/ -R;"
+
 #cleanup
 #alias remove-kernals="sudo apt-get remove --purge $(dpkg -l 'linux-*' | sed '/^ii/!d;/'\"$(uname -r | sed \"s/\(.*\)-\([^0-9]\+\)/\1/\")\"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d')"
 alias remove-db-snapshots="cd ~/workspace; find . -name \"*.sql.gz\" -type f -delete; cd -"
@@ -99,4 +102,3 @@ alias sync-web-dev.wirt.us="rsync -chavzP --stats u41180863@s176840467.onlinehom
 
 # php coding standards
 alias drupalcs='phpcs --standard=$path_to_coder_module/coder_sniffer/Drupal --'
-
