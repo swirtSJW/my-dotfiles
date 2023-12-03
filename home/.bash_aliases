@@ -21,8 +21,12 @@ alias docs="cd /media/swirt/ExtraDrive/Documents"
 
 
 #VA
+alias copy-drupal-core-module='f(){ cp -a /home/swirt/workspace/va/vagov/docroot/core/modules/"$1"/. /home/swirt/workspace/mods/drupal/core/modules/"$1"/  -R;  unset -f f; }; f'
+
 alias copy-govdelivery-bulletins-git="rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/govdelivery_bulletins/.git; cp /home/swirt/workspace/mods/govdelivery_bulletins/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/govdelivery_bulletins/.git/ -R;"
 alias copy-allow_only_one-git="cd /home/swirt/workspace/mods/allow_only_one; git fetch --all; git pull; cd -; rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/allow_only_one/.git; cp /home/swirt/workspace/mods/allow_only_one/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/allow_only_one/.git/ -R;"
+alias copy-config_views-git="cd /home/swirt/workspace/mods/config_views; git fetch --all; git pull; cd -; rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/config_views/.git; cp /home/swirt/workspace/mods/config_views/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/config_views/.git/ -R;"
+alias copy-codit_menu_tools-git="cd /home/swirt/workspace/mods/codit_menu_tools; git fetch --all; git pull; cd -; rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/codit_menu_tools/.git; cp /home/swirt/workspace/mods/codit_menu_tools/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/codit_menu_tools/.git/ -R;"
 alias copy-content_model_documentation-git="cd /home/swirt/workspace/mods/content_model_documentation; git fetch --all; git pull; cd -; rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/content_model_documentation/.git; cp /home/swirt/workspace/mods/content_model_documentation/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/content_model_documentation/.git/ -R;"
 alias copy-node_link_report-git="cd /home/swirt/workspace/mods/node_link_report; git fetch --all; git pull; cd -; rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/node_link_report/.git; cp /home/swirt/workspace/mods/node_link_report/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/node_link_report/.git/ -R;"
 alias copy-entity_field_fetch-git="cd /home/swirt/workspace/mods/entity_field_fetch; git fetch --all; git pull; cd -; rm -rf /home/swirt/workspace/va/vagov/docroot/modules/contrib/entity_field_fetch/.git; cp /home/swirt/workspace/mods/entity_field_fetch/.git/ /home/swirt/workspace/va/vagov/docroot/modules/contrib/entity_field_fetch/.git/ -R;"
